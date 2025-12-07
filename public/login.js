@@ -4,23 +4,23 @@ document.addEventListener('DOMContentLoaded', function() {
     loginForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
-        if (validateForm(username, password)) {
-            simulateLogin(username, password);
+        if (validateForm(email, password)) {
+            login(email, password);
         } else {
             alert('Please fill in both fields.');
         }
     });
 
-    function validateForm(username, password) {
-        return username.trim() !== '' && password.trim() !== '';
+    function validateForm(email, password) {
+        return email.trim() !== '' && password.trim() !== '';
     }
 
-    function simulateLogin(username, password) {
+    function login(email, password) {
         // Simulate login success for demonstration
-        alert('Login successful for user: ' + username);
+        alert('Login successful for email: ' + email);
         // Redirect to dashboard (replace with actual redirection)
         window.location.href = '/dashboard';
     }
